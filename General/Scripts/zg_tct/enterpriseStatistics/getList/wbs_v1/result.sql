@@ -21,7 +21,6 @@ and expire_time <![CDATA[ >= ]]> STR_TO_DATE(#{durDateStart,jdbcType=VARCHAR},'%
 and expire_time <![CDATA[ <= ]]> STR_TO_DATE(CONCAT(#{durDateEnd,jdbcType=VARCHAR}," 23:59:59"),'%Y-%m-%d %H:%i:%s:%f')
 and login_time <![CDATA[ >= ]]> STR_TO_DATE(#{loginDateStart,jdbcType=VARCHAR},'%Y-%m-%d')
 and login_time <![CDATA[ <= ]]> STR_TO_DATE(CONCAT(#{loginDateEnd,jdbcType=VARCHAR}," 23:59:59"),'%Y-%m-%d %H:%i:%s:%f')
-order by ${sortName} ${sortOrder}
 **/
 order by add_time desc
 -- limit #{start},#{pageSize}

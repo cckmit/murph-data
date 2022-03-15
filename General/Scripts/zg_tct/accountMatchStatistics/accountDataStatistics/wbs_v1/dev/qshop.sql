@@ -1,12 +1,26 @@
 -- CONNECTION: url=jdbc:mysql://10.0.12.22:3306/qshop
 
-
--- ÐÐÒµ {4,7}
--- accountMatchStatistics/accountDataStatistics
-
 select count(1) as user_nums
 from qshop.qd_buy_offer_4
 where belong_industry = 4
-  and to_days(add_time) = to_days(now())-1
-group by contact_qq
+and to_days(add_time) = to_days(now())-1
+group by contact_qq;
+
+
+select *
+from qshop.qd_buy_offer_4
+-- where belong_industry = 4
 ;
+
+select *
+from qd_enterprise
+-- where appid = #{appId, jdbcType=VARCHAR}
+where appid = '202005214';
+
+
+
+show create table qshop.qd_buy_offer_4;
+
+show create table qshop.qd_buy_offer_7;
+
+
